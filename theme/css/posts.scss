@@ -1,29 +1,40 @@
 .posts {
+  &.mine {
+    background-color: $mineBackgroundColor;
+  }
+  &.not-mine {
+    background-color: $notMineBackgroundColor;
+  }
   .post {
     .post-content {
-      border-bottom: 2px solid $indicatorColor;
+      .primary {
+        border-bottom: $indicatorThickness solid $indicatorColor; 
+      }
     }
     
     .post-footer {
       margin-top: 10px;
       
-      .post-footer-element {
-        display: inline-block;
-        font-size: 12px;
-        
-        padding: 5px 10px;
-        margin: 0 10px;
-        
-        color: $actionColor;
-      }
+      color: $actionColor;
       
       .post-actions {
-        border-top: 2px solid $indicatorColor;
+        display: inline-block;
+        border-top: $indicatorThickness solid $indicatorColor;
+        vertical-align: middle;
+        padding-top: 5px;
+        
+        .like_button, .reblog_button {
+          display: inline-block !important;
+          width: 20px !important;
+          height: 20px !important;
+        }
       } 
       
       .post-tags {
+        display: inline;
+        
         .post-tag {
-          text-transform: capitalize;
+          display: inline;
         }
       }
     }
@@ -33,6 +44,10 @@
       .photo-caption {
         margin-top: 20px;
         font-size: 13px;
+        
+        a {
+          @include link();
+        }
       }
       
       .photoset-photos {
@@ -51,6 +66,10 @@
         width: 50%;
         padding: 20px;
         
+        a {
+          @include link();
+        }
+        
         p {
           margin-bottom: 20px;
           
@@ -68,6 +87,7 @@
     
     &.quote {
       .quote-wrap {
+        margin: 0 10px;
         border-left: 6px solid $indicatorColor;
         padding-left: 20px;
       }
@@ -104,37 +124,41 @@
       }
       .audio-playcount {
         text-align: center;
-        color: $highlightColor;
+        color: $actionColor;
         margin-top: 10px;
         font-size: 11px
       }
     }
     
     &.link {
-      text-align: center;
-      
       .link-target {
+        margin: 0 10px;
+        text-align: center;
+      
+        border-bottom: $indicatorThickness solid transparent;
+        
+        &:hover {
+          color: $actionColor;
+          border-bottom: $indicatorThickness solid $actionColor;
+        }
+      
         .link-name {
           display: inline-block;
           padding: 20px;
           
           font-size: 30px;
           
-          &:hover {
-            color: $highlightColor;
-            border-bottom: 2px solid $highlightColor;
-          }
+          border-bottom: $indicatorThickness solid transparent;
           
           .link-symbol {
             vertical-align: middle;
             padding-right: 10px;
             font-size: 50px;
-            color: $indicatorColor;
           }
         }
       }
       .link-description {
-        margin-top: 10px;
+        text-align: center;
       }
     }
   }
@@ -154,7 +178,7 @@
     }
     
     &:hover {
-      background-color: $highlightColor;
+      background-color: $actionColor;
     }
   }
   

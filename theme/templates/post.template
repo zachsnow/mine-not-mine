@@ -9,7 +9,7 @@
       </div>
       
       <div class="post-footer">
-        <div class="post-footer-actions">
+        <div class="post-actions">
           {LikeButton color="white" size="20"}
           {ReblogButton color="white" size="20"}
         </div>

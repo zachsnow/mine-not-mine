@@ -3,11 +3,13 @@
     {block:IfByline}
       <h3 class="footer-byline-title">
         {block:IfBylineLink}<a href="{text:Byline Link}">{text:Byline}</a>{/block:IfBylineLink}
-        {block:IfNotBylineLink}{text:Byline}{/block:IfBylineLink}
+        {block:IfNotBylineLink}{text:Byline}{/block:IfNotBylineLink}
       </h3>
     {/block:IfByline}
+    {block:IfBylineAuthor}
+      <h4 class="footer-byline-author">{text:Byline Author}</h4>
+    {/block:IfBylineAuthor}
   </div>
-  
   
   <div class="footer-theme">
     <a href="https://github.com/zachsnow/mine-not-mine/">Theme &raquo;</a>

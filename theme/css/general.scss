@@ -9,7 +9,12 @@ body {
 @mixin link(){
   line-height: 1.2em;
   display: inline-block;
-  border-bottom: 1px solid $indicatorColor;
+  border-bottom: $indicatorThickness solid $indicatorColor;
+  &:hover {
+    a {
+      border-bottom: $actionColor solid $actionColor;
+    }
+  }
 }
 
 @mixin animate($property, $time, $ease: ease-in-out){

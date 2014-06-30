@@ -10,10 +10,10 @@
     {/block:IfNotHeaderImage}
   </a>
   
-  <ul class="header-navigation">
+  <ul class="navigation">
     {% for i in range(1,10) %}
       {block:IfNavigation{{ i }}}
-        <li class="header-navigation-item">
+        <li class="navigation-item custom">
           {block:IfNavigationLink{{ i }}}
             <a href="{text:Navigation Link {{ i }}}">
               {text:Navigation {{ i }}}
@@ -26,6 +26,14 @@
       {/block:IfNavigation{{ i }}}
     {% endfor %}
     
+    {block:HasPages}
+      {block:Pages}
+        <li class="navigation-item page">
+          <a href="{URL}">{Label}</a>
+        </li>
+      {/block:Pages}
+    {/block:HasPages}
+
     {block:IfContactLink}
       <li class="header-navigation-item contact">
         <a href="{text:Contact Link}">Contact</a>

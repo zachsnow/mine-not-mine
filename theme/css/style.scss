@@ -1,12 +1,15 @@
 $backgroundColor: #{'{color:Background Color}'};
+$mineBackgroundColor: #{'{color:Mine Background Color}'};
+$notMineBackgroundColor: #{'{color:Not Mine Background Color}'};
 
 $textColor: #{'{color:Primary Text Color}'};
 $indicatorColor: #{'{color:Indicator Color}'};
 $actionColor: #{'{color:Action Color}'};
-$highlightColor: #{'{color:Highlight Color}'};
 
 $headerFontFamily: #{'{block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif'};
 $textFontFamily: #{'{block:IfTypekitTextFontFamily}"{text:Typekit Text Font Family}", {/block:IfTypekitTextFontFamily}sans-serif"'};
+
+$indicatorThickness: 3px;
 
 @mixin headerFontFamily(){
   font-family: $headerFontFamily;

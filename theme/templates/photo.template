@@ -3,7 +3,7 @@
 {% block type %}photo{% endblock %}
 
 {% block content %}
-  <ul class="photoset-photos">
+  <ul class="photoset-photos primary">
     {% include 'photoset-photo.template' %}
   </ul>
   
