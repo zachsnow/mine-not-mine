@@ -1,0 +1,32 @@
+{% macro posts(reblog) %}
+  {block:Posts}
+    {% include 'text.template' %}
+    {% include 'audio.template' %}
+    {% include 'photo.template' %}
+    {% include 'photoset.template' %}
+    {% include 'quote.template' %}
+    {% include 'link.template' %}
+  {/block:Posts}
+{% endmacro %}
+
+<ul class="posts mine">
+  {{ posts(False) }}
+</ul>
+
+<ul class="posts not-mine">
+  {{ posts(True) }}
+</ul>
+
+{block:Pagination}
+  <div class="pagination">
+    <a class="pagination-link pagination-previous {block:PreviousPage}exists{/block:PreviousPage}"
+      href="{block:PreviousPage}{PreviousPage}{/block:PreviousPage}"
+    >&laquo;</a>
+  
+    <span class="pagination-current">{CurrentPage}</span>
+    
+    <a class="pagination-link pagination-next {block:NextPage}exists{/block:NextPage}"
+      href="{block:NextPage}{NextPage}{/block:NextPage}"
+    >&raquo;</a>
+  </div>
+{/block:Pagination}

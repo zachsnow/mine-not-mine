@@ -1,0 +1,164 @@
+.posts {
+  .post {
+    .post-content {
+      border-bottom: 2px solid $indicatorColor;
+    }
+    
+    .post-footer {
+      margin-top: 10px;
+      
+      .post-footer-element {
+        display: inline-block;
+        font-size: 12px;
+        
+        padding: 5px 10px;
+        margin: 0 10px;
+        
+        color: $actionColor;
+      }
+      
+      .post-actions {
+        border-top: 2px solid $indicatorColor;
+      } 
+      
+      .post-tags {
+        .post-tag {
+          text-transform: capitalize;
+        }
+      }
+    }
+    
+    /* Shared between photo and photoset posts. */
+    &.photo, &.photoset {
+      .photo-caption {
+        margin-top: 20px;
+        font-size: 13px;
+      }
+      
+      .photoset-photos {
+        .photoset-photo {
+          .photo-image {
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+          }  
+        }
+      }
+    }
+    
+    &.text {
+      .text-body {
+        width: 50%;
+        padding: 20px;
+        
+        p {
+          margin-bottom: 20px;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      
+      .text-title {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+    
+    &.quote {
+      .quote-wrap {
+        border-left: 6px solid $indicatorColor;
+        padding-left: 20px;
+      }
+      
+      .quote-text {
+        font-style: italic;
+        font-size: 20px;
+      }
+      .quote-source {
+      }
+    }
+    
+    /* Shared between photo and photoset posts. */
+    &.audio {
+      .audio-embed {
+        text-align: center;
+      }
+      
+      .audio-caption {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 13px;
+        
+        /* Assumes that the first paragraph in the caption is the "real" title. */
+        p:first-child {
+          @include headerFontFamily;
+          font-size: 30px;
+          padding-bottom: 10px;
+          
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .audio-playcount {
+        text-align: center;
+        color: $highlightColor;
+        margin-top: 10px;
+        font-size: 11px
+      }
+    }
+    
+    &.link {
+      text-align: center;
+      
+      .link-target {
+        .link-name {
+          display: inline-block;
+          padding: 20px;
+          
+          font-size: 30px;
+          
+          &:hover {
+            color: $highlightColor;
+            border-bottom: 2px solid $highlightColor;
+          }
+          
+          .link-symbol {
+            vertical-align: middle;
+            padding-right: 10px;
+            font-size: 50px;
+            color: $indicatorColor;
+          }
+        }
+      }
+      .link-description {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin-top: 25px;
+  text-align: center;
+  
+  .pagination-link {
+    display: inline-block;
+    padding: 5px 20px;
+    
+    visibility: hidden;
+    &.exists {
+      visibility: visible;
+    }
+    
+    &:hover {
+      background-color: $highlightColor;
+    }
+  }
+  
+  .pagination-current {
+    padding: 5px 20px;
+  }
+}

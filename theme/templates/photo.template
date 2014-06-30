@@ -1,0 +1,16 @@
+{% extends "post.template" %}
+
+{% block type %}photo{% endblock %}
+
+{% block content %}
+  <ul class="photoset-photos">
+    {% include 'photoset-photo.template' %}
+  </ul>
+  
+  {% if reblog %}
+    <a href="{ReblogParentURL}" class="photo-source">{ReblogParentName}</a>
+  {% endif %}
+  
+  <div class="photo-caption">{Caption}</div>
+{% endblock %}
+

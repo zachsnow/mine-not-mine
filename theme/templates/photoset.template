@@ -1,0 +1,13 @@
+{% extends "post.template" %}
+
+{% block type %}photoset{% endblock %}
+
+{% block content %}
+  <ul class="photoset-photos">
+    {block:Photos}
+      {% include 'photoset-photo.template' %}
+    {/block:Photos}
+  </ul>
+  
+  <div class="photo-caption">{Caption}</div>
+{% endblock %}

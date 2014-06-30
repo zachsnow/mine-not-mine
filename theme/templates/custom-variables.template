@@ -1,0 +1,24 @@
+<meta name="color:Background Color" content="#f0f0f0"/>
+
+<meta name="color:Text Color" content="#202020" />
+<meta name="color:Action Color" content="#ffffff" />
+<meta name="color:Indicator Color" content="#fffff" />
+<meta name="color:Highlight Color" content="#e1b636" />
+
+<meta name="text:Byline" content="" />
+<meta name="text:Byline Link" content="" />
+
+{% for i in range(1,10) %}
+  <meta name="text:Navigation {{ i }}" content="" />
+  <meta name="text:Navigation Link {{ i }}" content="" />
+{% endfor %}
+
+<meta name="image:Logo" content="" />
+
+<meta name="text:Facebook ID" content="" />
+
+<meta name="text:Google Analytics ID" content="" />
+
+<meta name="text:Typekit ID" content="" />
+<meta name="text:Typekit Header Font Family" content="" />
+<meta name="text:Typekit Text Font Family" content="" />

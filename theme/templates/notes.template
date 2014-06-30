@@ -1,0 +1,10 @@
+<div class="notes">
+  
+  <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
+  {block:PostNotes}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
+  {/block:PostNotes}
+</div>

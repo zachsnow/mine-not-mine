@@ -1,0 +1,16 @@
+{% extends "post.template" %}
+
+{% block type %}link{% endblock %}
+
+{% block content %}
+  <div class="link-target">
+    <a href="{URL}" class="link-name" {Target}>
+      <span class="link-symbol">&#x260d;</span>
+      {Name}
+    </a>
+  </div>
+
+  {block:Description}
+    <div class="link-description">{Description}</div>
+  {/block:Description}
+{% endblock %}

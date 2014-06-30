@@ -1,0 +1,23 @@
+$backgroundColor: #{'{color:Background Color}'};
+
+$textColor: #{'{color:Primary Text Color}'};
+$indicatorColor: #{'{color:Indicator Color}'};
+$actionColor: #{'{color:Action Color}'};
+$highlightColor: #{'{color:Highlight Color}'};
+
+$headerFontFamily: #{'{block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif'};
+$textFontFamily: #{'{block:IfTypekitTextFontFamily}"{text:Typekit Text Font Family}", {/block:IfTypekitTextFontFamily}sans-serif"'};
+
+@mixin headerFontFamily(){
+  font-family: $headerFontFamily;
+}
+
+@mixin textFontFamily(){
+  font-family: $textFontFamily;
+}
+
+@import "reset";
+@import "general";
+@import "posts";
+@import "navigation";
+@import "notes";

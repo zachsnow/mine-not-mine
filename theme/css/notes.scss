@@ -1,0 +1,59 @@
+.notes {
+  margin-top: 5px;
+  text-align: center;
+  
+  .note-count {
+    display: inline-block;
+    padding: 5px 12px 5px 10px; /* The heart throws off the padding a bit. */
+  }
+  
+  .tumblr-notes {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid $indicatorColor;
+    
+    .notes {
+      margin: 0 auto;
+      text-align: left;
+      width: 50%;
+    }
+    
+    .note {
+      height: 32px;
+      line-height: 32px;
+
+      .avatar {
+        vertical-align: middle;
+      }
+      
+      .action {
+        font-size: 11px;
+        padding-left: 10px;
+        display: inline-block;
+      }
+      
+      .clear {
+        display: none;
+      }
+      
+      blockquote {
+        display: inline;
+        padding: 0;
+        font-size: 11px;
+        
+        &:before {
+          content: "“";
+          margin-right: -2px;
+        }
+        &:after {
+          content: "”";
+          margin-left: -2px;
+        }
+      }
+      
+      a {
+        @include link();
+      }
+    }
+  }
+}

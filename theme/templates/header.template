@@ -1,0 +1,35 @@
+<div class="header">
+  <a href="/" class="header-mast">
+    {block:IfHeaderImage}
+      <img src="{image:Header}" />
+    {/block:IfHeaderImage}
+    {block:IfNotHeaderImage}
+      <h1 class="header-title">
+        {Title}
+      </h1>
+    {/block:IfNotHeaderImage}
+  </a>
+  
+  <ul class="header-navigation">
+    {% for i in range(1,10) %}
+      {block:IfNavigation{{ i }}}
+        <li class="header-navigation-item">
+          {block:IfNavigationLink{{ i }}}
+            <a href="{text:Navigation Link {{ i }}}">
+              {text:Navigation {{ i }}}
+            </a>
+          {/block:IfNavigationLink{{ i }}}
+          {block:IfNotNavigationLink{{ i }}}
+            {text:Navigation {{ i }}}
+          {/block:IfNotNavigationLink{{ i }}}
+        </li>
+      {/block:IfNavigation{{ i }}}
+    {% endfor %}
+    
+    {block:IfContactLink}
+      <li class="header-navigation-item contact">
+        <a href="{text:Contact Link}">Contact</a>
+      </li>
+    {/block:IfContactLink}
+  </ul>
+</div>
