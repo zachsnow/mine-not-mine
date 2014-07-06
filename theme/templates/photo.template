@@ -2,15 +2,13 @@
 
 {% block type %}photo{% endblock %}
 
-{% block content %}
+{% block primary_content %}
   <ul class="photoset-photos primary">
     {% include 'photoset-photo.template' %}
   </ul>
-  
-  {% if reblog %}
-    <a href="{ReblogParentURL}" class="photo-source">{ReblogParentName}</a>
-  {% endif %}
-  
+{% endblock %}
+
+{% block secondary_content %}
   <div class="photo-caption">{Caption}</div>
 {% endblock %}
 

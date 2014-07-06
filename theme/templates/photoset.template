@@ -2,12 +2,14 @@
 
 {% block type %}photoset{% endblock %}
 
-{% block content %}
+{% block primary_content %}
   <ul class="photoset-photos primary">
     {block:Photos}
       {% include 'photoset-photo.template' %}
     {/block:Photos}
   </ul>
-  
+{% endblock %}
+
+{% block secondary_content %}
   <div class="photo-caption">{Caption}</div>
 {% endblock %}

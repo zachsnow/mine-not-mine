@@ -2,7 +2,7 @@
 
 {% block type %}text{% endblock %}
 
-{% block content %}
+{% block secondary_content %}
   <div class="text-body">{Body}</div>
   
   {block:Title}

@@ -2,11 +2,13 @@
 
 {% block type %}audio{% endblock %}
 
-{% block content %}
+{% block primary_content %}
   {block:AudioEmbed}
     <div class="audio-embed">{AudioEmbed-640}</div>
   {/block:AudioEmbed}
-  
+{% endblock %}
+
+{% block secondary_content %}
   {block:Caption}
     <div class="audio-caption">{Caption}</div>
   {/block:Caption}

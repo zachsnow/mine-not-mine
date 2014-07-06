@@ -40,13 +40,13 @@ body {
     vertical-align: top;
     width: 50%;
   }
-  
-  &.permalink {
+}
+
+.permalink .content {
+  display: block;
+  .posts {
     display: block;
-    .posts {
-      display: block;
-      width: auto;
-    }
+    width: auto;
   }
 }
 

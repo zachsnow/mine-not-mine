@@ -59,7 +59,7 @@
   </head>
   
   <body>
-    <div class="main">
+    <div class="main {block:PermalinkPage}permalink{/block:PermalinkPage}">
       {% include 'header.template' %}
       <div class="content">
         {% include 'posts.template' %}

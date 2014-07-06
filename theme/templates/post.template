@@ -4,36 +4,52 @@
   {% if reblog %}{block:RebloggedFrom}{% else %}{block:NotReblog}{% endif %}
     <li class="post {{ self.type()|css }} {TagsAsClasses} {% if reblog %}reblog{% endif %}">
       <div class="post-content">
-        {% block content %}
+        {% block primary_content %}
+        {% endblock %}
+        
+        {% if reblog %}
+          <h1 class="post-reblog-author">
+            <div class="post-reblog-circle">
+              {% include 'reblog-button.template' %}
+            </div>
+            <a class="post-reblog-link" href="{ReblogParentURL}">{ReblogParentName}</a>
+          </h1>
+        {% endif %}
+        
+        {% block secondary_content %}
         {% endblock %}
       </div>
       
       <div class="post-footer">
-        <div class="post-actions">
-          {LikeButton color="white" size="20"}
-          {ReblogButton color="white" size="20"}
+        <div class="post-actions post-footer-item-group">
+          {% include 'like-button.template' %}
+          {% include 'reblog-button.template' %}
         </div>
         
+        {block:Date}
+          <a class="post-date post-footer-item" href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>
+        {/block:Date}
+        
+        {block:NoteCount}
+          <a class="post-note-count post-footer-item" href="{Permalink}">{NoteCountWithLabel}</a>
+        {/block:NoteCount}
+        
         {block:HasTags}
-          <ul class="post-tags">
+          <ul class="post-tags post-footer-item-group">
             {block:Tags}
-              <li class="post-tag">
-                <a class="post-tag-link" href="{TagURL}">{Tag}</a>
+              <li class="post-tag post-footer-item">
+                <a class="post-tag-link" href="{TagURL}">#{Tag}</a>
               </li>
             {/block:Tags}
           </ul>
         {/block:HasTags}
-        
-        
-        {block:Date}
-          <a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>
-        {/block:Date}
-        
-        {block:NoteCount}
-          <a href="{Permalink}">{NoteCountWithLabel}</span>
-        {/block:NoteCount}
-        {% include 'notes.template' %}
       </div>
+      
+      {block:PostNotes}
+        <div class="post-notes">
+          {PostNotes-16}
+        </div>
+      {/block:PostNotes}
     </li>
   {% if reblog %}{/block:RebloggedFrom}{% else %}{/block:NotReblog}{% endif %}
 {/block:{{ self.type()|capitalize }}}

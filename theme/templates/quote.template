@@ -2,7 +2,7 @@
 
 {% block type %}quote{% endblock %}
 
-{% block content %}
+{% block secondary_content %}
   <div class="quote-wrap">
     <div class="quote-text">
       &ldquo;{Quote}&rdquo;

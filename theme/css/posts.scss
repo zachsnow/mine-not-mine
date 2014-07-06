@@ -1,4 +1,6 @@
 .posts {
+  padding: 10px;
+  
   &.mine {
     background-color: $mineBackgroundColor;
   }
@@ -12,22 +14,50 @@
       }
     }
     
+    .post-reblog-author {
+      margin-top: 5px;
+      
+      .post-reblog-circle {
+        background-color: $indicatorColor;
+        display: inline-block;
+        border-radius: 12px;
+        vertical-align: middle;
+        padding: 0 1px 2px 1px;
+        width: 22px;
+        height: 22px;
+      }
+      
+      .post-reblog-link {
+        text-transform: uppercase;
+        @include headerFontFamily;
+        display: inline-block;
+        vertical-align: middle;    
+      }
+    }
+    
     .post-footer {
+      @include headerFontFamily;
+      color: $actionColor;
+      text-transform: uppercase;
+      font-size: 14px;
+      
       margin-top: 10px;
       
-      color: $actionColor;
+      
+      .post-footer-item-group, .post-footer-item {
+        display: inline-block;
+        vertical-align: middle;
+        
+        margin-right: 20px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
       
       .post-actions {
-        display: inline-block;
         border-top: $indicatorThickness solid $indicatorColor;
         vertical-align: middle;
-        padding-top: 5px;
-        
-        .like_button, .reblog_button {
-          display: inline-block !important;
-          width: 20px !important;
-          height: 20px !important;
-        }
+        padding: 15px 2px 15px 0;
       } 
       
       .post-tags {
@@ -42,7 +72,6 @@
     /* Shared between photo and photoset posts. */
     &.photo, &.photoset {
       .photo-caption {
-        margin-top: 20px;
         font-size: 13px;
         
         a {
@@ -143,18 +172,15 @@
         }
       
         .link-name {
+          @include headerFontFamily;
+          text-transform: uppercase;
+          
           display: inline-block;
           padding: 20px;
           
           font-size: 30px;
           
           border-bottom: $indicatorThickness solid transparent;
-          
-          .link-symbol {
-            vertical-align: middle;
-            padding-right: 10px;
-            font-size: 50px;
-          }
         }
       }
       .link-description {

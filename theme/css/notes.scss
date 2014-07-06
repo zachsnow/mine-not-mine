@@ -1,59 +1,87 @@
-.notes {
-  margin-top: 5px;
-  text-align: center;
+.action-button {
+  display: inline-block;
+  position: relative;
   
-  .note-count {
-    display: inline-block;
-    padding: 5px 12px 5px 10px; /* The heart throws off the padding a bit. */
+  width: 19px !important;
+  height: 19px !important;
+    
+  .like_button, .reblog_button, .fake-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
   
-  .tumblr-notes {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px solid $indicatorColor;
-    
-    .notes {
-      margin: 0 auto;
-      text-align: left;
-      width: 50%;
+  .like_button, .reblog_button {
+    z-index: 100;
+    opacity: 0;
+  }
+
+  .fake-button {
+    z-index: 99;
+    padding: 2px;
+    width: 18px;
+    height: 21px;
+  }
+  
+  .fake-like-button {
+    stroke: $actionColor;
+    stroke-width: 2px;
+    fill: transparent;
+  }
+  
+  .fake-reblog-button {
+    fill: $actionColor;
+  }
+}
+
+.post-notes {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid $indicatorColor;
+  
+  .notes {
+    margin: 0 auto;
+    text-align: left;
+    width: 50%;
+  }
+  
+  .note {
+    height: 32px;
+    line-height: 32px;
+
+    .avatar {
+      vertical-align: middle;
     }
     
-    .note {
-      height: 32px;
-      line-height: 32px;
-
-      .avatar {
-        vertical-align: middle;
-      }
+    .action {
+      font-size: 11px;
+      padding-left: 10px;
+      display: inline-block;
+    }
+    
+    .clear {
+      display: none;
+    }
+    
+    blockquote {
+      display: inline;
+      padding: 0;
+      font-size: 11px;
       
-      .action {
-        font-size: 11px;
-        padding-left: 10px;
-        display: inline-block;
+      &:before {
+        content: "“";
+        margin-right: -2px;
       }
-      
-      .clear {
-        display: none;
+      &:after {
+        content: "”";
+        margin-left: -2px;
       }
-      
-      blockquote {
-        display: inline;
-        padding: 0;
-        font-size: 11px;
-        
-        &:before {
-          content: "“";
-          margin-right: -2px;
-        }
-        &:after {
-          content: "”";
-          margin-left: -2px;
-        }
-      }
-      
-      a {
-        @include link();
-      }
+    }
+    
+    a {
+      @include link();
     }
   }
 }
