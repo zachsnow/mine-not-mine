@@ -10,7 +10,7 @@
       <h4 class="footer-byline-author">{text:Byline Author}</h4>
     {/block:IfBylineAuthor}
   </div>
-  
+    
   <div class="footer-theme">
     <a href="https://github.com/zachsnow/mine-not-mine/">Theme &raquo;</a>
   </div>

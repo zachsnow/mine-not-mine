@@ -2,6 +2,7 @@ body {
   color: $textColor; 
   background-color: $backgroundColor;
   line-height: 1.8em;
+  font-size: $standardFont;
   
   @include textFontFamily();
 }
@@ -26,35 +27,47 @@ body {
 .main {
   min-width: 760px;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .header {
-  
-}
-
-.content {
   display: table;
-  .posts {
+  width: 100%;
+  background-color: $mineBackgroundColor;
+  
+  @include headerFontFamily;
+  
+  .header-title {
     display: table-cell;
-    vertical-align: top;
-    width: 50%;
+    vertical-align: middle;
+    padding: 10px;
+  }
+  
+  .header-navigation {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding: 10px;
+    
+    .navigation-item {
+      display: inline-block;
+      margin-left: 20px;
+      
+      font-weight: bold;
+      text-transform: uppercase;
+      
+      border-bottom: $indicatorThickness solid transparent;
+      &:hover {
+        border-bottom: $indicatorThickness solid $indicatorColor;
+      }
+    }
   }
 }
-
-.permalink .content {
-  display: block;
-  .posts {
-    display: block;
-    width: auto;
-  }
-}
-
 
 .footer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+  background-color: $mineBackgroundColor;
+  
+  padding: 20px 0;
   
   .footer-byline {
     line-height: 1.2em;
@@ -73,7 +86,7 @@ body {
   
   .theme {
     margin-top: 15px;
-    font-size: 12px;
+    font-size: $smallFont;
     text-align: right;
     margin-right: 10px;
   }

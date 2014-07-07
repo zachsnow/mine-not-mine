@@ -3,9 +3,9 @@
 {% block type %}text{% endblock %}
 
 {% block secondary_content %}
-  <div class="text-body">{Body}</div>
-  
   {block:Title}
-    <div class="text-title">{Title}</div>
+    <h2 class="text-title">{Title}</h2>
   {/block:Title}
+  
+  <div class="text-body">{Body}</div>
 {% endblock %}

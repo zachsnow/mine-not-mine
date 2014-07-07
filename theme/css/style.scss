@@ -8,8 +8,13 @@ $actionColor: #{'{color:Action Color}'};
 
 $headerFontFamily: #{'{block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif'};
 $textFontFamily: #{'{block:IfTypekitTextFontFamily}"{text:Typekit Text Font Family}", {/block:IfTypekitTextFontFamily}serif'};
+$secondaryTextFontFamily: #{'{block:IfTypekitSecondaryTextFontFamily}"{text:Typekit Secondary Text Font Family}", {/block:IfTypekitSecondaryTextFontFamily}'} $textFontFamily;
 
 $indicatorThickness: 3px;
+
+$smallFont: 12px;
+$standardFont: 14px;
+$largeFont: 20px;
 
 @mixin headerFontFamily(){
   font-family: $headerFontFamily;
@@ -19,8 +24,11 @@ $indicatorThickness: 3px;
   font-family: $textFontFamily;
 }
 
+@mixin secondaryTextFontFamily(){
+  font-family: secondaryTextFontFamily;
+}
+
 @import "reset";
 @import "general";
 @import "posts";
-@import "navigation";
 @import "notes";

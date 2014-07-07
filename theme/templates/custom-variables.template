@@ -19,7 +19,7 @@
   <meta name="text:Navigation Link {{ i }}" content="" />
 {% endfor %}
 
-<meta name="image:Logo" content="" />
+<meta name="image:Logo" content="{HeaderImage}" />
 
 <meta name="text:Facebook ID" content="" />
 
@@ -28,3 +28,4 @@
 <meta name="text:Typekit ID" content="" />
 <meta name="text:Typekit Header Font Family" content="" />
 <meta name="text:Typekit Text Font Family" content="" />
+<meta name="text:Typekit Secondary Text Font Family" content="" />

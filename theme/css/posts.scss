@@ -1,8 +1,25 @@
+.posts-wrap {
+  display: table;
+  width: 100%;
+}
+
+.permalink .posts-wrap {
+  display: block;
+  
+  .posts {
+    display: block;
+    width: auto;
+  }
+}
+
 .posts {
+  display: table-cell;
+  vertical-align: top;
   padding: 10px;
   
   &.mine {
     background-color: $mineBackgroundColor;
+    width: 66%;
   }
   &.not-mine {
     background-color: $notMineBackgroundColor;
@@ -39,7 +56,7 @@
       @include headerFontFamily;
       color: $actionColor;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: $smallFont;
       
       margin-top: 10px;
       
@@ -72,8 +89,6 @@
     /* Shared between photo and photoset posts. */
     &.photo, &.photoset {
       .photo-caption {
-        font-size: 13px;
-        
         a {
           @include link();
         }
@@ -117,14 +132,15 @@
     &.quote {
       .quote-wrap {
         margin: 0 10px;
-        border-left: 6px solid $indicatorColor;
+        border-left: $indicatorThickness solid $indicatorColor;
         padding-left: 20px;
       }
       
       .quote-text {
-        font-style: italic;
-        font-size: 20px;
+        @include secondaryTextFontFamily;
+        font-size: $largeFont;
       }
+      
       .quote-source {
       }
     }
@@ -136,55 +152,33 @@
       }
       
       .audio-caption {
-        text-align: center;
         margin-top: 20px;
-        font-size: 13px;
-        
-        /* Assumes that the first paragraph in the caption is the "real" title. */
-        p:first-child {
-          @include headerFontFamily;
-          font-size: 30px;
-          padding-bottom: 10px;
-          
-          &:last-child {
-            padding-bottom: 0;
-          }
-        }
       }
+      
       .audio-playcount {
         text-align: center;
         color: $actionColor;
         margin-top: 10px;
-        font-size: 11px
+        font-size: $smallFont;
       }
     }
     
     &.link {
       .link-target {
-        margin: 0 10px;
-        text-align: center;
-      
-        border-bottom: $indicatorThickness solid transparent;
-        
-        &:hover {
-          color: $actionColor;
-          border-bottom: $indicatorThickness solid $actionColor;
-        }
-      
         .link-name {
           @include headerFontFamily;
           text-transform: uppercase;
-          
-          display: inline-block;
-          padding: 20px;
-          
-          font-size: 30px;
+          font-size: $largeFont;
           
           border-bottom: $indicatorThickness solid transparent;
+          &:hover {
+            border-bottom: $indicatorThickness solid $indicatorColor;
+          }
         }
       }
+      
       .link-description {
-        text-align: center;
+        
       }
     }
   }

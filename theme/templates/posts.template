@@ -9,13 +9,15 @@
   {/block:Posts}
 {% endmacro %}
 
-<ul class="posts mine">
-  {{ posts(False) }}
-</ul>
-
-<ul class="posts not-mine">
-  {{ posts(True) }}
-</ul>
+<div class="posts-wrap">
+  <ul class="posts mine">
+    {{ posts(False) }}
+  </ul>
+  
+  <ul class="posts not-mine">
+    {{ posts(True) }}
+  </ul>
+</div>
 
 {block:Pagination}
   <div class="pagination">
